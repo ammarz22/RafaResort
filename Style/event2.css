@@ -1,0 +1,446 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Author', sans-serif;
+    /* overflow-x: hidden; */
+} 
+
+
+/* Body section */
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    transition: 0.5s ease;
+    word-spacing: 0px;
+}
+
+header .logo img {
+    height: 7rem;
+    width: auto;
+}
+
+/* Nav menu */
+.nav {
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #01284d;
+    overflow: hidden;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 1.25rem;
+    color: #f9f9f9;
+    font-size: 1.5rem;
+}
+
+
+.menu li a {
+    text-decoration: none;
+}
+
+
+.menu a:hover {
+    color: skyblue;
+}
+
+.nav {
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+}
+
+/* Menu Icon */
+.hamb {
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}
+
+/* Style label tag */
+
+.hamb-line {
+    background: #f9f9f9;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+}
+
+/* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after {
+    background: #f9f9f9;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+/* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav {
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+.section {
+    margin-top: 3rem;
+}
+
+.page-header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-header:before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.page-header .page-header-content {
+    z-index: 888;
+    color: whitesmoke;
+    width: 70%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-header .page-header-content h1 {
+    font-size: 11vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.page-header .page-header-content a {
+    background: white;
+    padding: 1em;
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 15px;
+
+}
+
+.page-header .page-header-image {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-blend-mode: color-burn;
+}
+/* Facilities */
+.m1 {
+    position: relative;
+    background: linear-gradient(45deg, #FF5733 0%, #8B0000 50%, #FF5733 100%);
+    color: #fff; /* Text color for better readability on the gradient background */
+    padding: 50px 0; /* Adjust padding as needed */
+}
+
+.m1_bg{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.m1_img img{
+    width: 500px;
+    height: 350px;
+    margin-right: 3rem;   
+}
+
+.m1_info h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 45px;
+    color: goldenrod;
+}
+
+.m1_info p:nth-of-type(1){
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    text-align: center;
+    font-size: 25px;    
+}
+
+.m1_info p:nth-of-type(2){
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Container for the two sections */
+.page-split {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+}
+
+/* Style for each section */
+
+.m2_bg, .m3_bg {
+    background: linear-gradient(45deg, #FF5733 0%, #8B0000 50%, #FF5733 100%);
+    color: #fff; /* Text color for better readability on the gradient background */
+    padding: 5px 0px;
+    border-radius: 10px; /* Optional: Add rounded corners to the background */
+}
+
+.section {
+    flex-basis: 48%; /* Adjust the width as needed to create space between sections */
+    text-align: center;
+    margin: 10px;
+}
+
+/* Style for the images */
+.m2_img img,
+.m3_img img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    padding: 15px;
+}
+
+/* Style for the text */
+.m2_info,
+.m3_info {
+    text-align: left;
+    padding: 20px;
+}
+
+/* Additional styles for h1 and p elements (optional) */
+h1 {
+    font-size: 40px;
+    color: goldenrod;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 25px;
+}
+
+/*Footer section*/
+
+footer {
+    background-color: #111;
+    margin-top: 2rem;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9; 
+}
+
+.socialIcons a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.logo_f img {
+    width: 100px; 
+    height: auto;
+    margin-left: 46%;     
+}
+
+.footerNav {
+    margin: 30px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footerNav ul li a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover {
+    opacity: 1;
+}
+
+.footerBottom {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white;
+}
+
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+/* media tags */
+/* m1*/
+@media (max-width: 700px) {
+    .m1_bg {
+        flex-direction: column; /* Change flex-direction to column */
+        margin: 3%;
+        padding-right: 8%;
+    }
+  
+    .m1_img img {
+        width: 100%; /* Adjust image width as needed */
+        height: auto; /* Adjust image height as needed */
+        margin-right: 0; /* Remove the right margin to center the image */
+    }
+}
+
+/* pagespilt */
+@media (max-width: 700px) {
+    .page-split {
+        flex-direction: column; /* Change flex-direction to column */
+    }
+  
+    .section {
+        width: 100%; /* Adjust the width as needed to create space between sections */
+    }
+}
+
+/* paragrapgh */
+@media (max-width: 700px) {
+    h1 {
+        font-size: 30px;
+    }
+  
+    p {
+        font-size: 20px;
+    }
+}
+
+/* footer */
+
+@media (max-width: 700px) {
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation-bar {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+    
+}
+
+
+

@@ -1,0 +1,1688 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Author', sans-serif;
+    /* overflow-x: hidden; */
+}
+
+/* common for all pages */
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    transition: 0.5s ease;
+    word-spacing: 0px;
+}
+
+header .logo img {
+    height: 7rem;
+    width: auto;
+}
+
+/* Nav menu */
+.nav {
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #01284d;
+    overflow: hidden;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 1.25rem;
+    color: #f9f9f9;
+    font-size: 1.5rem;
+}
+
+
+.menu li a {
+    text-decoration: none;
+}
+
+
+.menu a:hover {
+    color: skyblue;
+}
+
+.nav {
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+}
+
+/* Menu Icon */
+.hamb {
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}
+
+/* Style label tag */
+
+.hamb-line {
+    background: #f9f9f9;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+}
+
+/* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after {
+    background: #f9f9f9;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+/* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav {
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+.section {
+    margin-top: 3rem;
+}
+
+.page-header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-header:before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.page-header .page-header-content {
+    z-index: 888;
+    color: whitesmoke;
+    width: 70%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-header .page-header-content h1 {
+    font-size: 11vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.page-header .page-header-content a {
+    background: white;
+    padding: 1em;
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 15px;
+
+}
+
+.page-header .page-header-image {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-blend-mode: color-burn;
+}
+/* end of common for all pages */
+
+/* indexpage */
+/* About */
+
+.abt_bg {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.abt_img img {
+    width: 500px;
+    height: 350px;
+    margin-left: 3rem;
+}
+
+.abt_info h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.abt_info p:nth-of-type(1) {
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+    font-size: 20px;
+}
+
+.abt_info p:nth-of-type(2) {
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Facilities */
+.fac_bg {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.fac_img img {
+    width: 500px;
+    height: 350px;
+    margin-right: 3rem;
+}
+
+.fac_info {
+    padding: 0;
+}
+
+.fac_info h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.fac_info p {
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    text-align: center;
+    font-size: 25px;
+}
+
+.fac_info ol {
+    font-size: 20px;
+    padding: 0 80px;
+}
+
+/* food */
+.food_bg {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.food_img img {
+    width: 500px;
+    height: 350px;
+    margin-left: 3rem;
+}
+
+.food_info h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+
+.food_info p {
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+    font-size: 23px;
+}
+
+.food_info ul {
+    padding: 0 30px;
+    font-size: 20px;
+}
+
+/* meet */
+.meet_bg {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.meet_img img {
+    width: 500px;
+    height: 350px;
+    margin-right: 3rem;
+}
+
+.meet_info h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.meet_info p:nth-of-type(1) {
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    text-align: center;
+    font-size: 20px;
+}
+
+.meet_info p:nth-of-type(2) {
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    text-align: center;
+    font-size: 20px;
+}
+/* End of indexpage */
+
+/* branches page */
+/* description */
+.des_bg{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-style: dashed;
+}
+
+
+.des_info h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 60px;
+    color:goldenrod;
+}
+
+.des_info p:nth-of-type(1){
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+    font-size: 20px;    
+}
+
+
+.br{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* tabuk */
+
+.tabuk_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+       /* border: 3px solid red; */
+}
+
+.tabuk_img img{
+    width: 100%;
+    height: 350px;
+    margin-top: 1rem;
+}
+
+.tabuk_info h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.tabuk_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;   
+}
+
+.tabuk_info iframe{
+    width: 100%;
+    height: 250px;
+    margin-top: 2rem;
+}
+
+
+/* bahamas */
+.bahamas_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.bahamas_img img{
+    width: 100%;
+    height: 350px; 
+    margin-top: 1rem;
+}
+
+.bahamas_info h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    color: goldenrod;
+    margin-top: 1rem;
+}
+
+.bahamas_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;    
+}
+.bahamas_info iframe{
+    width: 100%;
+    height: 250px;
+    margin-top: 1rem;
+}
+
+
+/* srilanka */
+.sl_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sl_img img{
+    width: 100%;
+    height: 350px;   
+    margin-top: 3rem;
+}
+
+.sl_info h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    color: goldenrod;
+    margin-top: 1rem;
+}
+
+.sl_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;  
+}
+
+.sl_info iframe{
+    width: 100%;
+    height: 250px;
+    margin-top: 1rem;
+}
+
+
+/* maldives */
+.mal_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mal_img img{
+    width: 100%;
+    height: 350px; 
+    margin-top: 3rem;
+}
+
+.mal_info h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    color: goldenrod;
+    margin-top: 1rem;
+}
+
+.mal_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;  
+}
+
+.mal_info iframe{
+    width: 100%;
+    height: 250px;
+    margin-top: 1rem;
+}
+
+.table{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 3rem; 
+    border-collapse: collapse;
+    
+}
+
+.table thead tr th{
+    background-color: aquamarine;
+    color: black ;
+    padding: 13px 50px;
+    font-size: 17px;
+    font-weight: 700;
+    
+}
+
+.table tbody tr td{
+    background-color: black;
+    color: white;
+    padding: 13px 50px;
+    font-size: 17px;
+}
+
+.table tfoot tr td{
+    background-color: aquamarine;
+    color: black ;
+    padding: 13px 50px;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+
+}
+/* end of branches page */
+
+/* adventure page */
+/* adventures intro */
+.rel_bg{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-style:dashed;
+}
+
+.rel_info h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 60px;
+    color: goldenrod;
+}
+
+.rel_info p:nth-of-type(1){
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 20px;
+}
+
+.adv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* jetski */
+.jet_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+       /* border: 3px solid red; */
+}
+
+.jet_img img{
+    width: 100%;
+    height: 350px;
+    margin-top: 1rem;
+}
+
+.jet_info h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.jet_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;    
+}
+
+.jet_info iframe{
+    width: 100%;
+    height: 250px;
+    margin-top: 1rem;
+}
+
+/* surf */
+.surf_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+       /* border: 3px solid red; */
+}
+
+.surf_img img{
+    width: 100%;
+    height: 350px;
+    margin-top: 1rem;
+}
+
+.surf_info h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.surf_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;   
+}
+
+.surf_info iframe{
+    width: 100%;
+    height: 250px;
+    margin-top: 2.5rem;
+}
+
+/* bugy */
+.bugy_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+       /* border: 3px solid red; */
+}
+
+.bugy_img img{
+    width: 100%;
+    height: 350px;
+    margin-top: 3rem;
+}
+
+.bugy_info h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.bugy_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px; 
+}
+
+.bugy_info iframe{
+    width: 100%;
+    height: 250px;
+    margin-top: 1rem;
+}
+
+/* wski */
+.wski_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+       /* border: 3px solid red; */
+}
+
+.wski_img img{
+    width: 100%;
+    height: 350px;
+    margin-top: 3rem;
+}
+
+.wski_info h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.wski_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;   
+}
+
+.wski_info iframe{
+    width: 100%;
+    height: 250px;
+    margin-top: 1rem;
+}
+/* end of adventure page */
+
+/* restaurants page */
+/* intro */
+.intro_bg{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-style: dashed;
+}
+
+.intro_info h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 60px;
+    color:goldenrod;
+}
+
+.intro_info p:nth-of-type(1){
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+    font-size: 20px;    
+}
+
+.intro_info p:nth-of-type(2){
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+    font-size: 20px;
+}
+
+.cuisine{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* arab */
+.arab_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+       /* border: 3px solid red; */
+}
+
+.arab_img img{
+    width: 100%;
+    height: 350px;
+    margin-top: 1rem;
+}
+
+.arab_info h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.arab_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;    
+}
+
+
+/* indian*/
+.indian_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+       /* border: 3px solid red; */
+}
+
+.indian_img img{
+    width: 100%;
+    height: 350px;
+    margin-top: 1rem;
+}
+
+.indian_info h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.indian_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;    
+}
+
+/* chinese */
+.chinese_bg{
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+       /* border: 3px solid red; */
+}
+
+.chinese_img img{
+    width: 100%;
+    height: 350px;
+    margin-top: 3rem;
+}
+
+.chinese_info h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    color: goldenrod;
+}
+
+.chinese_info p:nth-of-type(1){
+    text-align: center;
+    font-size: 20px;    
+}
+
+/* events */
+
+.events{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 100px 50px;
+}
+
+.events a:nth-of-type(1){
+    
+    background-image: url(Images\ and\ video/Wed3.webp);
+    background-position: center;
+    background-size: cover;
+    
+    
+}
+
+.events a:nth-of-type(2){
+    
+    background-image: url(Images\ and\ video/Wed3.webp);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+
+.ev .events a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    width: 300px;
+    height: 200px;
+    
+}
+
+/* Menu */
+
+.food-menu{
+    text-align: center;
+    width: 100%;
+    border: #000;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 5rem;
+    color: #000;
+    text-transform: uppercase;
+    background-color: goldenrod;
+    padding: 15px 15px;
+    text-decoration: none;
+
+}
+
+.arabm{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.indianm{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.chinesem{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+/* end of restaurants page */
+
+/* booking page */
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.container_book{
+    width: 80%;
+}
+
+.container_book fieldset{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+
+.container_book legend{
+    font-size: 25px;
+    display: flex;
+    text-align: center;
+    padding: 10px 15px;
+    font-weight: bolder;
+    color: #fff;
+    background-color: #000;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.form_field{
+    width: 45%;
+    margin: 15px 10px 10px 10px;
+}
+
+.form_field input, select{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #00000090;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.form_field p{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.book_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+/* end of booking page */
+
+/* footer common */
+/*Footer section*/
+
+footer {
+    background-color: #111;
+    margin-top: 2rem;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialIcons a i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socialIcons a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.logo_f img {
+    width: 100px;
+    height: auto;
+    margin-left: 46%;
+}
+
+.footerNav {
+    margin: 30px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footerNav ul li a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover {
+    opacity: 1;
+}
+
+.footerBottom {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white;
+}
+
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+/* end of footer common */
+/* Responsiveness */
+/* common */
+@media (min-width: 800px) {
+    .nav {
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+
+    .menu li {
+        float: left;
+    }
+
+    .menu a:hover {
+        background-color: transparent;
+        color: skyblue;
+
+    }
+
+    .hamb {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .page-header .page-header-content h1 {
+        font-size: 11vw;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .page-header .page-header-content h1 {
+        font-size: 13vw;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .page-header .page-header-content h1 {
+
+        font-size: 12vw;
+    }
+}
+/* end of common */
+
+/* index */
+
+/* home */
+@media screen and (max-width: 991px) {
+    .Home .content h1 {
+        font-size: 3em;
+        line-height: 60px;
+    }
+
+    .Home .content a {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .Home .content h1 {
+        font-size: 2em;
+        line-height: 50px;
+    }
+
+    .Home .content a {
+        font-size: 15px;
+    }
+
+    .Home .content {
+        width: 90%;
+    }
+}
+
+/* abt */
+@media screen and (max-width: 991px) {
+    .abt_bg {
+        flex-direction: column;
+    }
+
+    .abt_img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .abt_info p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .abt_info p:nth-of-type(2) {
+        margin: 0;
+    }
+}
+
+/* fac */
+@media screen and (max-width: 991px) {
+    .fac_bg {
+        flex-direction: column;
+    }
+
+    .fac_img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .fac_info p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .fac_info p:nth-of-type(2) {
+        margin: 0;
+    }
+}
+
+/* food */
+@media screen and (max-width: 991px) {
+    .food_bg {
+        flex-direction: column;
+    }
+
+    .food_img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .food_info p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .food_info p:nth-of-type(2) {
+        margin: 0;
+    }
+}
+
+/* meet */
+@media screen and (max-width: 991px) {
+    .meet_bg {
+        flex-direction: column;
+    }
+
+    .meet_img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .meet_info p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .meet_info p:nth-of-type(2) {
+        margin: 0;
+    }
+}
+
+/* smaller */
+@media (max-width: 700px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation-bar {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .navigation-bar a {
+        margin: 10px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .abt_bg {
+        flex-direction: column;
+    }
+
+    .abt_img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .abt_info p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .abt_info p:nth-of-type(2) {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .fac_bg {
+        flex-direction: column;
+    }
+
+    .fac_img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .fac_info p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .fac_info p:nth-of-type(2) {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .food_bg {
+        flex-direction: column;
+    }
+
+    .food_img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .food_info p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .food_info p:nth-of-type(2) {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .meet_bg {
+        flex-direction: column;
+    }
+
+    .meet_img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .meet_info p:nth-of-type(1) {
+        margin: 0;
+    }
+
+    .meet_info p:nth-of-type(2) {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation-bar {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .navigation-bar a {
+        margin: 10px;
+    }
+
+    .navigation-bar a::before {
+        width: 0%;
+    }
+
+    .navigation-bar a:hover::before {
+        width: 0%;
+    }
+
+    .navigation-bar a:hover {
+        color: white;
+        transition: 0.5s;
+    }
+
+    .socialIcons {
+        flex-wrap: wrap;
+    }
+
+    .socialIcons a {
+        margin: 10px;
+    }
+
+    .footerNav {
+        flex-wrap: wrap;
+    }
+
+    .footerNav ul li a {
+        margin: 10px;
+    }
+
+    .footerBottom p {
+        font-size: 0.8em;
+    }
+
+    .designer {
+        font-size: 0.8em;
+    }
+} 
+/* end of index */
+
+/* branch */
+/* branches */
+@media screen and (max-width: 960px){
+    .Branches .content{
+        width: 100%;
+    }
+    .Branches .content h1{
+        font-size: 3em;
+        line-height: 50px;
+    }
+    .Branches .content a{
+        margin-left: 0;
+    }
+}
+
+/* des */
+@media screen and (max-width: 960px){
+    .des_bg{
+        flex-direction: column;
+    }
+    .des_bg .des_img img{
+        width: 100%;
+    }
+    .des_bg .des_info{
+        width: 100%;
+    }
+    .des_bg .des_info h1{
+        font-size: 3em;
+        line-height: 50px;
+    }
+    .des_bg .des_info p:nth-of-type(1){
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* tabuk */
+@media screen and (max-width: 960px){
+    .tabuk_bg{
+        flex-direction: column;
+    }
+    .tabuk_bg .tabuk_img img{
+        width: 100%;
+    }
+    .tabuk_bg .tabuk_info{
+        width: 100%;
+    }
+    .tabuk_bg .tabuk_info h1{
+        font-size: 3em;
+        line-height: 50px;
+    }
+    .tabuk_bg .tabuk_info p:nth-of-type(1){
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* sl */
+@media screen and (max-width: 960px){
+    .sl_bg{
+        flex-direction: column;
+    }
+    .sl_bg .sl_img img{
+        width: 100%;
+    }
+    .sl_bg .sl_info{
+        width: 100%;
+    }
+    .sl_bg .sl_info h1{
+        font-size: 3em;
+        line-height: 50px;
+    }
+    .sl_bg .sl_info p:nth-of-type(1){
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* maldives */
+@media screen and (max-width: 960px){
+    .mal_bg{
+        flex-direction: column;
+    }
+    .mal_bg .mal_img img{
+        width: 100%;
+    }
+    .mal_bg .mal_info{
+        width: 100%;
+    }
+    .mal_bg .mal_info h1{
+        font-size: 3em;
+        line-height: 50px;
+    }
+    .mal_bg .mal_info p:nth-of-type(1){
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* bahamas */
+@media screen and (max-width: 960px){
+    .bahamas_bg{
+        flex-direction: column;
+    }
+    .bahamas_bg .mal_img img{
+        width: 100%;
+    }
+    .bahamas_bg .mal_info{
+        width: 100%;
+    }
+    .bahamas_bg .mal_info h1{
+        font-size: 3em;
+        line-height: 50px;
+    }
+    .bahamas_bg .mal_info p:nth-of-type(1){
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* table */
+@media screen and (max-width: 960px){
+    .table{
+        flex-direction: column;
+    }
+    .table thead tr th{
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .table tbody tr td{
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .table tfoot tr td{
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+}
+
+/* footer */
+@media screen and (max-width: 960px){
+    .footerContainer{
+        padding: 20px 10px;
+    }
+    .footerNav ul li a{
+        margin: 10px;
+    }
+    .footerBottom p{
+        font-size: 0.8em;
+    }
+    .designer{
+        font-size: 0.8em;
+    }
+}
+/* end of branch */
+
+/* adventure */
+/* adventures */
+@media screen and (max-width: 960px){
+    .Adventures .content h1{
+        font-size: 3em;
+    }
+    .Adventures .content a{
+        margin-left: 10rem;
+    }
+}
+
+/* rel */
+@media screen and (max-width: 960px){
+    .rel_info h1{
+        font-size: 3em;
+    }
+}
+
+/* adve */
+@media screen and (max-width: 960px){
+    .adv{
+        flex-wrap: wrap;
+    }
+    .jet_bg{
+        width: 100%;
+    }
+    .surf_bg{
+        width: 100%;
+    }
+    .bugy_bg{
+        width: 100%;
+    }
+    .wski_bg{
+        width: 100%;
+    }
+}
+
+/* footer */
+@media screen and (max-width: 960px){
+    .footerNav ul li a{
+        font-size: 1em;
+    }
+    .footerBottom p{
+        font-size: 0.8em;
+    }
+    .designer{
+        font-size: 0.8em;
+    }
+}
+/* end of adventure */
+
+/* restaurant */
+/* Restaurant */
+@media screen and (max-width: 960px){
+    .Restaurants .content h1{
+        font-size: 3em;
+    }
+    .Restaurants .content a{
+        margin-left: 10rem;
+    }
+}
+
+/* intro */
+@media screen and (max-width: 960px){
+    .intro_info h1{
+        font-size: 3em;
+    }
+
+    .intro_info p{
+        margin-left: 3rem;
+    }
+}
+
+/* cuisne */
+@media screen and (max-width: 960px){
+    .cuisine{
+        flex-wrap: wrap;
+    }
+    .arab_bg{
+        width: 100%;
+    }
+    .indian_bg{
+        width: 100%;
+    }
+    .chinese_bg{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .footerNav ul li a{
+        font-size: 1em;
+    }
+    .footerBottom p{
+        font-size: 0.8em;
+    }
+    .designer{
+        font-size: 0.8em;
+    }
+}
+/* end of restaurant */
+
+/* booking */
+@media (max-width: 1200px){
+    .Booking .content{
+        padding: 0 100px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .container{
+        padding: 0 5px;
+    }
+
+    .container_book{
+        width: 100%;
+    }
+
+    .form_field{
+        width: 100%;
+    }
+    
+
+}
+
+@media (max-width: 450px){
+    .Booking .content{
+        padding: 0 15px;
+    }
+}
+/* end of booking */
