@@ -210,7 +210,13 @@ header .logo img {
 .m1_img img{
     width: 500px;
     height: 350px;
-    margin-right: 3rem;   
+    margin-right: 3rem;  
+}
+
+.m1_img img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    
 }
 
 .m1_info h1{
