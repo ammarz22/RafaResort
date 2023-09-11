@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Author', sans-serif;
-    /* overflow-x: hidden; */
 }
 
 /* common for all pages */
@@ -106,9 +105,7 @@ header .logo img {
     display: none;
 }
 
-/* Hide checkbox */
-
-/* Toggle menu icon */
+/* menu icon */
 .side-menu:checked~nav {
     max-height: 100%;
 }
@@ -386,7 +383,6 @@ header .logo img {
     width: 45%;
     justify-content: space-between;
     align-items: center;
-    /* border: 3px solid red; */
 }
 
 .tabuk_img img {
@@ -588,7 +584,6 @@ header .logo img {
     width: 45%;
     justify-content: space-between;
     align-items: center;
-    /* border: 3px solid red; */
 }
 
 .jet_img img {
@@ -621,7 +616,6 @@ header .logo img {
     width: 45%;
     justify-content: space-between;
     align-items: center;
-    /* border: 3px solid red; */
 }
 
 .surf_img img {
@@ -654,7 +648,6 @@ header .logo img {
     width: 45%;
     justify-content: space-between;
     align-items: center;
-    /* border: 3px solid red; */
 }
 
 .bugy_img img {
@@ -687,7 +680,6 @@ header .logo img {
     width: 45%;
     justify-content: space-between;
     align-items: center;
-    /* border: 3px solid red; */
 }
 
 .wski_img img {
@@ -760,7 +752,6 @@ header .logo img {
     width: 45%;
     justify-content: space-between;
     align-items: center;
-    /* border: 3px solid red; */
 }
 
 .arab_img img {
@@ -794,7 +785,6 @@ header .logo img {
     width: 45%;
     justify-content: space-between;
     align-items: center;
-    /* border: 3px solid red; */
 }
 
 .indian_img img {
@@ -827,7 +817,6 @@ header .logo img {
     width: 45%;
     justify-content: space-between;
     align-items: center;
-    /* border: 3px solid red; */
 }
 
 .chinese_img img {

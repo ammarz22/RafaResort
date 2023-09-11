@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Author', sans-serif;
-    /* overflow-x: hidden; */
 } 
 
 
@@ -107,9 +106,7 @@ header .logo img {
     display: none;
 }
 
-/* Hide checkbox */
-
-/* Toggle menu icon */
+/* menu icon */
 .side-menu:checked ~ nav {
     max-height: 100%;
 }
@@ -197,8 +194,8 @@ header .logo img {
 .m1 {
     position: relative;
     background: linear-gradient(45deg, rgba(69, 123, 157, 1) 0%, rgba(54, 67, 79, 1) 100%);
-    color: #fff; /* Text color for better readability on the gradient background */
-    padding: 50px 0; /* Adjust padding as needed */
+    color: #fff; 
+    padding: 50px 0; 
 }
 
 .m1_bg{
@@ -249,13 +246,13 @@ header .logo img {
 
 .m2_bg, .m3_bg {
     background: linear-gradient(45deg, rgba(69, 123, 157, 1) 0%, rgba(54, 67, 79, 1) 100%);
-    color: #fff; /* Text color for better readability on the gradient background */
+    color: #fff; 
     padding: 5px 0px;
-    border-radius: 10px; /* Optional: Add rounded corners to the background */
+    border-radius: 10px; 
 }
 
 .section {
-    flex-basis: 48%; /* Adjust the width as needed to create space between sections */
+    flex-basis: 48%; 
     text-align: center;
     margin: 10px;
 }
@@ -277,7 +274,6 @@ header .logo img {
     padding: 20px;
 }
 
-/* Additional styles for h1 and p elements (optional) */
 h1 {
     font-size: 40px;
     color: goldenrod;
@@ -381,26 +377,26 @@ footer {
 /* m1*/
 @media (max-width: 700px) {
     .m1_bg {
-        flex-direction: column; /* Change flex-direction to column */
+        flex-direction: column; 
         margin: 3%;
         padding-right: 8%;
     }
   
     .m1_img img {
-        width: 100%; /* Adjust image width as needed */
-        height: auto; /* Adjust image height as needed */
-        margin-right: 0; /* Remove the right margin to center the image */
+        width: 100%; 
+        height: auto; 
+        margin-right: 0; 
     }
 }
 
 /* pagespilt */
 @media (max-width: 700px) {
     .page-split {
-        flex-direction: column; /* Change flex-direction to column */
+        flex-direction: column;
     }
   
     .section {
-        width: 100%; /* Adjust the width as needed to create space between sections */
+        width: 100%; 
     }
 }
 
