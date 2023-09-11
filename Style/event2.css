@@ -196,7 +196,7 @@ header .logo img {
 /* Facilities */
 .m1 {
     position: relative;
-    background: linear-gradient(45deg, #FF5733 0%, #8B0000 50%, #FF5733 100%);
+    background: linear-gradient(45deg, rgba(69, 123, 157, 1) 0%, rgba(54, 67, 79, 1) 100%);
     color: #fff; /* Text color for better readability on the gradient background */
     padding: 50px 0; /* Adjust padding as needed */
 }
@@ -248,7 +248,7 @@ header .logo img {
 /* Style for each section */
 
 .m2_bg, .m3_bg {
-    background: linear-gradient(45deg, #FF5733 0%, #8B0000 50%, #FF5733 100%);
+    background: linear-gradient(45deg, rgba(69, 123, 157, 1) 0%, rgba(54, 67, 79, 1) 100%);
     color: #fff; /* Text color for better readability on the gradient background */
     padding: 5px 0px;
     border-radius: 10px; /* Optional: Add rounded corners to the background */
