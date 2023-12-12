@@ -73,6 +73,7 @@ bookAdventureBtn.addEventListener("click", () => {
     calculateTotalCost();
     calculateAdventureCost();
     adventurebookadd();
+    calculateOverallCost();
     adventurebooktable.scrollIntoView({behavior : 'smooth', block : 'center'});
 });
 
@@ -508,4 +509,21 @@ function calculateDuration() {
     console.log(`Duration of stay: ${durationInDays} days`);
 
     return durationInDays;
+}
+
+const totalBookAmountElement = document.getElementById("totalBookAmount");
+
+function calculateOverallCost() {
+    // get total
+    const roomBookingCost = calculateTotalCost() ||0;
+    const adventureBookingCost = calculateAdventureCost() ||0;
+
+    // add room and adventure cost
+    const overallCost = roomBookingCost + adventureBookingCost;
+
+    // overall cost
+    console.log(`Overall Cost: ${overallCost.toFixed(2)} LKR`);
+    totalBookAmountElement.textContent = `Overall Cost: ${overallCost.toFixed(2)} LKR`;
+
+    return overallCost;
 }

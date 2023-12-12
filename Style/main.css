@@ -1138,10 +1138,10 @@ footer {
 /* Responsive styling for smaller screens */
 @media (max-width: 768px) {
     .table-full {
-        font-size: 14px;
+        display: block;
+        width: 100%;
     }
 }
-
 
 /* end of footer common */
 /* Responsiveness */
