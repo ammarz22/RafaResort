@@ -974,20 +974,22 @@ select {
 
 .form_field p {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 18px;    
 }
 
 .book_btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
     width: 100%;
 }
 
 .book_btn .btn {
     padding: 0.5rem 1rem;
-    background-color: #9c9207;
-    color: #fff;
+    background-color: black;
+    color: white;
     border: none;
     border-radius: 0.5rem;
     font-size: 1.5rem;
@@ -1084,6 +1086,62 @@ footer {
     font-weight: 400;
     margin: 0px 5px;
 }
+
+#loyaltyfield{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    padding: 10px;
+    width: 180px;
+    font-size: 14px;
+}
+
+/* Basic styling for tables */
+.table-full {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-full, .table-full th, .table-full td {
+    border: 1px solid #ddd;
+}
+
+.table-full th, .table-full td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style for table headings */
+.table-full th {
+    background-color: #f2f2f2;
+}
+
+/* Style for alternating rows */
+.table-full tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style for the table sections */
+.update-table {
+    margin-top: 40px;
+}
+
+/* Additional styling for divs within the sections */
+.update-table > div {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .table-full {
+        font-size: 14px;
+    }
+}
+
 
 /* end of footer common */
 /* Responsiveness */

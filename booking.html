@@ -21,6 +21,8 @@
     <meta name="theme-color" content="#ffffff">
     <title>Booking-RAFA</title>
 
+    <script src="main.js" defer></script>
+
 </head>
 
 <header class="header">
@@ -55,48 +57,83 @@
         <div class="container_book">
             <form action="#">
                 <fieldset>
-                    <legend>Book Your Stay</legend>
+                    <legend>Personal Details</legend>
                     <div class="form_field">
-                        <p>Name</p>
-                        <input type="text" placeholder="Enter your Name">
+                        <p>First Name</p>
+                        <input type="text" placeholder="Enter your Name" id="fName">
+                    </div>
+                    <div class="form_field">
+                        <p>Last Name</p>
+                        <input type="text" placeholder="Enter your Name" id="lName">
                     </div>
                     <div class="form_field">
                         <p>Email</p>
-                        <input type="Email" placeholder="Enter your Email Address">
+                        <input type="Email" placeholder="Enter your Email Address" id="email">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="container_book">
+            <form action="#">
+                <fieldset>
+                    <legend>Book Your Stay</legend>
+                    <div class="form_field">
+                        <p>Check-In Date</p>
+                        <input type="date" id="inDate">
                     </div>
                     <div class="form_field">
-                        <p>Date</p>
-                        <input type="date">
+                        <p>Check-Out Date</p>
+                        <input type="date" id="outDate">
                     </div>
                     <div class="form_field">
-                        <p>Choice of Room</p>
-                        <select name="select" id="#">
-                            <option value="1">Beach-view</option>
-                            <option value="2">Land-view</option>
-                        </select>
+                        <p>No. Of Adults</p>
+                        <input type="number" placeholder="No. Of Adults" id="noAdults">
                     </div>
                     <div class="form_field">
-                        <p>Number of guests</p>
-                        <select name="select" id="#">
-                            <option value="1">1 person</option>
-                            <option value="2">2 persons</option>
-                            <option value="3">3 persons</option>
-                            <option value="4">4 persons</option>
-                            <option value="5">5 persons</option>
-                            <option value="5+">5+ persons</option>
-                        </select>
+                        <p>No. Of Children</p>
+                        <input type="number" placeholder="No. Of Children" id="noChildren">
                     </div>
                     <div class="form_field">
-                        <p>Type of room</p>
-                        <select name="select" id="#">
-                            <option value="1">Single-room/s</option>
-                            <option value="2">Couple-room/s</option>
-                            <option value="3">Family-room/s</option>
-                            <option value="4">Suite/s</option>
-                        </select>
+                        <p>Meal - Kids Above 5</p>
+                        <input type="number" placeholder="Kids Above 5" id="kidsMeal">
+                    </div>
+                    <div class="form_field">
+                        <p>No. Of Single Room</p>
+                        <input type="number" placeholder="Single Room" id="single" max="10" required>
+                    </div>
+                    <div class="form_field">
+                        <p>No. Of Double Room</p>
+                        <input type="number" placeholder="Triple Room" id="double" max="10" required>
+                    </div>
+                    <div class="form_field">
+                        <p>No. Of Triple Room</p>
+                        <input type="number" placeholder="Triple Room" id="triple" max="10" required>
+                    </div>
+                    <div class="form_field">
+                        <p>Additional Features</p>
+                        <label for="">WIFI</label>
+                        <input type="checkbox" id="wifiCheck"></input>
+                        <label for="">Pool View</label>
+                        <input type="checkbox" id="poolCheck"></input>
+                        <label for="">Garden View</label>
+                        <input type="checkbox" id="gardenCheck"></input>
+                        <label for="">Extra Bed</label>
+                        <input type="checkbox" id="extraBed"></input>
+                    </div>
+                    <div class="form_field">
+                        <p>Enter Promo Code</p>
+                        <input type="text" id="promoCode">
+                    </div>
+                    <div class="form_field">
+                        <p>Loyalty Points</p>
+                        <span id="loyaltyfield"></span>
                     </div>
                     <div class="book_btn">
-                        <button class="btn">Book Now</button>
+                        <button class="btn" id="checkloyaltyBtn" type="button">Check Loyalty</button>
+
+                        <button class="btn" id="addFav" type="button">Add to Favourite</button>
+
+                        <button type="button" class="btn" id="bookBtn" type="button">Book Now</button>
                     </div>
                 </fieldset>
             </form>
@@ -106,39 +143,42 @@
                 <fieldset>
                     <legend>Book Your Adventure</legend>
                     <div class="form_field">
-                        <p>Name</p>
-                        <input type="text" placeholder="Enter your Name">
-                    </div>
-                    <div class="form_field">
-                        <p>Email</p>
-                        <input type="Email" placeholder="Enter your Email Address">
-                    </div>
-                    <div class="form_field">
-                        <p>Date</p>
-                        <input type="date">
-                    </div>
-                    <div class="form_field">
                         <p>Choice of Adventure</p>
-                        <select name="select" id="#">
-                            <option value="1">Surfing</option>
-                            <option value="2">Jet-Ski</option>
-                            <option value="3">Quad-Biking</option>
-                            <option value="4">All of the above</option>
+                        <select name="select" id="adventureSelect">
+                            <option value="AdvNone" id="advNone">None</option>
+                            <option value="AdvSurf" id="advSurf">Surfing</option>
+                            <option value="AdvJet" id="advJet">Jet-Ski</option>
+                            <option value="AdvQuad" id="advQuad">Quad-Biking</option>
+                            <option value="AdvDive" id="advDive">Diving</option>
                         </select>
                     </div>
                     <div class="form_field">
-                        <p>Number of people</p>
-                        <select name="select" id="#">
-                            <option value="1">1 person</option>
-                            <option value="2">2 persons</option>
-                            <option value="3">3 persons</option>
-                            <option value="4">4 persons</option>
-                            <option value="5">5 persons</option>
-                            <option value="5+">5+ persons</option>
-                        </select>
+                        <p>Number of Local Adults</p>
+                        <input type="number" id="localAdults" placeholder="LocalAdults" required>
+                    </div>
+                    <div class="form_field">
+                        <p>Number of Local Kids</p>
+                        <input type="number" id="localKids" placeholder="LocalKids" required>
+                    </div>
+                    <div class="form_field">
+                        <p>Number of Foreign Adults</p>
+                        <input type="number" id="foreignAdults" placeholder="ForeignAdults" required>
+                    </div>
+                    <div class="form_field">
+                        <p>Number of Foreign Kids</p>
+                        <input type="number" id="foreignKids" placeholder="ForeignKids" required>
+                    </div>
+                    <div class="form_field">
+                        <p>Diving - Guide</p>
+                        <label for="">Adults</label>
+                        <input type="checkbox" id="diveAdults"></input>
+                        <label for="">Kids</label>
+                        <input type="checkbox" id="diveKids"></input>
                     </div>
                     <div class="book_btn">
-                        <button class="btn">Book Now</button>
+                        <button class="btn" id="advaddFav" type="button">Add Adventure to Favourite</button>
+
+                        <button class="btn" id="bookAdventure" type="button">Book Adventure</button>
                     </div>
                 </fieldset>
             </form>
@@ -146,33 +186,132 @@
     </div>
 </body>
 
-<body>
-    <!-- Footer Section -->
-    <footer>
-        <div class="foot Container section">
-            <div class="socialIcons">
-                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            <div class="footerNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="branches.html">About</a></li>
-                    <li><a href="booking.html">Contact us</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="logo_f">
-            <img src="images/Logo draft 2.webp" alt="logo">
-        </div>
-        <div class="footerBottom">
-            <p>Copyright &copy;2023; Designed by <span class="designer">Ammar</span></p>
-        </div>
+</head>
 
-        <!-- references -->
-        <!-- Freepik. (n.d.). Free AI Image | View of luxurious hotel interior space. [online] Available at: https://www.freepik.com/free-ai-image/view-luxurious-hotel-interior-space_58557151.htm#page=5&query=hotel&position=29&from_view=search&track=sph [Accessed 10 Sep. 2023]. -->
-        <!-- end of references -->
-    </footer>
+<body>
+    <!-- Your existing body content -->
+
+    <div class="container">
+        <!-- Your existing form elements -->
+
+        <!-- Display Total Price -->
+        <div id="totalPrice">
+            <h2>Total Price</h2>
+            <p id="totalAmount">0.00 LKR</p>
+        </div>
+    </div>
+
+    <!-- <footer>
+        Your existing footer content
+    </footer> -->
+
 </body>
+
+<section class="update-table">
+    <div>Reservation</div>
+    <table class="table-full">
+        <thead id="booklist">
+            <tr>
+                <td>Name</td>
+                <td>Check-In</td>
+                <td>Check-Out</td>
+                <td>Adults</td>
+                <td>Children</td>
+                <td>5+</td>
+                <td>S-Room</td>
+                <td>D-Rooms</td>
+                <td>T-Rooms</td>
+                <td>WI-FI</td>
+                <td>Pool</td>
+                <td>Garden</td>
+                <td>Extra</td>
+                <td>Promo</td>
+                <td>Total</td>
+            </tr>
+        </thead>
+        <tbody id="booktable">
+        </tbody>
+    </table>
+</section>
+
+<section class="update-table">
+    <div>Adventure Booking</div>
+    <table class="table-full">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>ADVENTURES</td>
+                <td>L ADULTS</td>
+                <td>L KIDS</td>
+                <td>F ADULTS</td>
+                <td>F KIDS</td>
+                <td>GUIDE- Adults</td>
+                <td>GUIDE- Kids</td>
+                <td>Total </td>
+            </tr>
+        </thead>
+        <tbody id="adventurebooktable">
+        </tbody>
+    </table>
+</section>
+
+<!-- Footer Section -->
+<!-- Footer -->
+
+<footer>
+    <div class="foot Container section">
+        <div class="socialIcons">
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="branches.html">About</a></li>
+                <li><a href="booking.html">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="logo_f">
+        <img src="images/Logo draft 2.webp" alt="logo">
+    </div>
+    <div class="footerBottom">
+        <p>Copyright &copy;2023; Designed by <span class="designer">Ammar</span></p>
+    </div>
+
+    <!-- references -->
+    <!-- Freepik. (n.d.). Free AI Image | View of luxurious hotel interior space. [online] Available at: https://www.freepik.com/free-ai-image/view-luxurious-hotel-interior-space_58557151.htm#page=5&query=hotel&position=29&from_view=search&track=sph [Accessed 10 Sep. 2023]. -->
+    <!-- end of references -->
+
+</footer>
+
+<!-- <footer>
+
+    <div class="foot Container section">
+        <div class="socialIcons">
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="branches.html">About</a></li>
+                <li><a href="booking.html">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="logo_f">
+        <img src="images/Logo draft 2.webp" alt="logo">
+    </div>
+    <div class="footerBottom">
+        <p>Copyright &copy;2023; Designed by <span class="designer">Ammar</span></p>
+    </div> -->
+
+    <!-- references -->
+    <!-- Freepik. (n.d.). Free AI Image | View of luxurious hotel interior space. [online] Available at: https://www.freepik.com/free-ai-image/view-luxurious-hotel-interior-space_58557151.htm#page=5&query=hotel&position=29&from_view=search&track=sph [Accessed 10 Sep. 2023]. -->
+    <!-- end of references -->
+
+<!-- </footer> -->
 </html>
