@@ -1097,7 +1097,7 @@ footer {
     font-size: 14px;
 }
 
-/* Basic styling for tables */
+/* booking table style */
 .table-full {
     width: 100%;
     border-collapse: collapse;
@@ -1118,12 +1118,12 @@ footer {
     background-color: #f2f2f2;
 }
 
-/* Style for alternating rows */
+/*style for row  */
 .table-full tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Style for the table sections */
+/* table section */
 .update-table {
     margin-top: 40px;
 }
@@ -1135,11 +1135,22 @@ footer {
     margin-bottom: 10px;
 }
 
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-    .table-full {
+/* Responsive table booking*/
+@media (max-width: 600px) {
+    .table-full, th, td {
         display: block;
+    }
+
+    th, td {
         width: 100%;
+        box-sizing: border-box;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
     }
 }
 
