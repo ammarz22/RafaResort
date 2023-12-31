@@ -1097,13 +1097,16 @@ footer {
     font-size: 14px;
 }
 
-/* booking table style */
+/* Common table style */
 .table-full {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+   
 }
-
+.wrapper {
+    overflow-x: auto; /* Add horizontal scrollbar if needed */
+}
 .table-full, .table-full th, .table-full td {
     border: 1px solid #ddd;
 }
@@ -1118,12 +1121,12 @@ footer {
     background-color: #f2f2f2;
 }
 
-/*style for row  */
+/* Style for row  */
 .table-full tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* table section */
+/* Table section */
 .update-table {
     margin-top: 40px;
 }
@@ -1135,24 +1138,41 @@ footer {
     margin-bottom: 10px;
 }
 
-/* Responsive table booking*/
-@media (max-width: 600px) {
-    .table-full, th, td {
-        display: block;
-    }
-
-    th, td {
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    /* Adjust the font size or padding for better mobile readability */
+    .table-full th, .table-full td {
         width: 100%;
-        box-sizing: border-box;
-    }
-
-    th, td {
-        text-align: center;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
+        padding: 8px;
+        font-size: 14px;
     }
 }
+
+@media only screen and (max-width: 400px) {
+    /* Adjust the font size or padding for better mobile readability */
+    .table-full th, .table-full td {
+        width: 100%;
+        padding: 5px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    /* Adjust the font size or padding for better mobile readability */
+    .table-full th, .table-full td {
+        width: 100%;
+        padding: 3px;
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
+
+
 
 /* end of footer common */
 /* Responsiveness */
@@ -1613,27 +1633,7 @@ footer {
     }
 }
 
-/* table */
-@media screen and (max-width: 960px) {
-    .table {
-        flex-direction: column;
-    }
 
-    .table thead tr th {
-        padding: 10px 20px;
-        font-size: 15px;
-    }
-
-    .table tbody tr td {
-        padding: 10px 20px;
-        font-size: 15px;
-    }
-
-    .table tfoot tr td {
-        padding: 10px 20px;
-        font-size: 15px;
-    }
-}
 
 /* footer */
 @media screen and (max-width: 960px) {
@@ -1814,3 +1814,5 @@ footer {
 }
 
 /* end of booking */
+
+/*  */

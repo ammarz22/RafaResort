@@ -119,8 +119,8 @@ function calculateTotalCost() {
     }
 
         // Update the total cost
-    console.log(`Total Cost: ${totalCost.toFixed(2)} LKR`);
-    totalAmountElement.textContent = `Total Cost: ${totalCost.toFixed(2)} LKR`;
+    console.log(`Total Room Cost: ${totalCost.toFixed(2)} LKR`);
+    totalAmountElement.textContent = `Total Room Cost: ${totalCost.toFixed(2)} LKR`;
 
     return totalCost;
 }
@@ -284,151 +284,23 @@ function adventurebookadd(){
 
 }
 
-function roomFormValidation() {
+// Date validation 
 
-    //Customer Details
-    const fNameInput = document.getElementById("firstName").value.trim();
-    const lNameInput = document.getElementById("lastName").value.trim();
-    const emailInput = document.getElementById("email").value.trim();
-    const phoneNumberInput = document.getElementById("phoneNumber").value.trim();
-    const countryInput = document.getElementById("country").value.trim();
+document.getElementById('inDate').min = new Date().toISOString().split('T')[0]
+document.getElementById('outDate').min = new Date().toISOString().split('T')[0]
 
-    //Booking Details
-    const checkIn = inDateInput.value.trim();
-    const checkOut = outDateInput.value.trim();
-    const adults = noAdultsInput.value.trim();
-    const singleRooms = parseInt(singleRoomInput.value) || 0;
-    const doubleRooms = parseInt(doubleRoomInput.value) || 0;
-    const tripleRooms = parseInt(tripleRoomInput.value) || 0;
-    
-    // validation for room
-    if (fNameInput === '') {
-      alert("Please Enter First Name");
-      document.getElementById("firstName").scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return false;
-    }
 
-    if (lNameInput === '') {
-      alert("Please Enter Last Name");
-      document.getElementById("lastName").scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return false;
-    }
+function validateCheckOut() {
+    var inDateValue = document.getElementById('inDate').value;
+    var outDateValue = document.getElementById('outDate').value;
 
-    if (emailInput === '') {
-      alert("Please Enter Your Email");
-      document.getElementById("email").scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return false;
+    // selected check-out date with the check-in date
+    if (inDateValue && outDateValue && outDateValue <= inDateValue) {
+        alert("Check-out date must be later than the check-in date.");
+        document.getElementById('outDate').value = "";
     }
-    
-    if (phoneNumberInput === '') {
-        alert("Please Enter Your Phone Number");
-        document.getElementById("phoneNumber").scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return false;
-    }
-    
-    if (countryInput === '') {
-        alert("Please Enter Your Country");
-        document.getElementById("country").scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return false;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput)) {
-      alert("Please enter a valid email address.");
-      document.getElementById("email").scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return false; 
-    }
-  
-    const phonePattern = /^\d{10}$/; 
-    if (!phonePattern.test(phoneNumberInput)) {
-      alert("Please enter a valid 10-digit phone number.");
-      document.getElementById("phoneNumber").scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return false; 
-    }
-
-    if (checkIn === '') {
-        alert('Please select the Check-In Date.');
-        return false;
-    }
-
-    if (checkOut === '') {
-        alert('Please select the Check-Out Date.');
-        return false;
-    }
-
-    if (!adults > 0){
-        alert('Please enter at least one adult.');
-        return false;
-    }
-
-    if (!(singleRooms > 0 || doubleRooms > 0 || tripleRooms > 0)) {
-        alert('Please select atleast one room.');
-        return false;
-    }
-  
-    return true;
 }
-  
-function adventureFormValidation() {
 
-    //Customer Details
-    const fNameInput = document.getElementById("firstName").value.trim();
-    const lNameInput = document.getElementById("lastName").value.trim();
-    const emailInput = document.getElementById("email").value.trim();
-    const phoneNumberInput = document.getElementById("phoneNumber").value.trim();
-    const countryInput = document.getElementById("country").value.trim();
-
-    //Adventure Booking
-    const adventureSelect = AdvDropDown.value
-    const localAdultsInput = document.getElementById("localadults")
-    const localKidsInput = document.getElementById("localkids")
-    const foreignAdultsInput = document.getElementById("foreignadults")
-    const foreignKidsInput = document.getElementById("foreignkids")
-
-    if (fNameInput === '') {
-        alert("Please Enter First Name");
-        document.getElementById("firstName").scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return false;
-    }
-  
-      if (lNameInput === '') {
-        alert("Please Enter Last Name");
-        return false;
-      }
-  
-      if (emailInput === '') {
-        alert("Please Enter Your Email");
-        return false;
-      }
-      
-      if (phoneNumberInput === '') {
-          alert("Please Enter Your Phone Number");
-          return false;
-      }
-      
-      if (countryInput === '') {
-          alert("Please Enter Your Country");
-          return false;
-      }
-  
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(emailInput)) {
-        alert("Please enter a valid email address.");
-        return false; 
-      }
-    
-      const phonePattern = /^\d{10}$/; 
-      if (!phonePattern.test(phoneNumberInput)) {
-        alert("Please enter a valid 10-digit phone number.");
-        return false; 
-      }
-
-      if (advType === 'none') {
-        alert('Please select an Adventure Type.');
-        return false;
-    }
-    return true
-}
 
 function saveRoomFav(){
     const roomBooking = {

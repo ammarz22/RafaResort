@@ -60,15 +60,15 @@
                     <legend>Personal Details</legend>
                     <div class="form_field">
                         <p>First Name</p>
-                        <input type="text" placeholder="Enter your Name" id="fName">
+                        <input type="text" placeholder="Enter your Name" id="fName" required>
                     </div>
                     <div class="form_field">
                         <p>Last Name</p>
-                        <input type="text" placeholder="Enter your Name" id="lName">
+                        <input type="text" placeholder="Enter your Name" id="lName" required>
                     </div>
                     <div class="form_field">
                         <p>Email</p>
-                        <input type="Email" placeholder="Enter your Email Address" id="email">
+                        <input type="Email" placeholder="Enter your Email Address" id="email" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+">
                     </div>
                 </fieldset>
             </form>
@@ -78,24 +78,24 @@
                 <fieldset>
                     <legend>Book Your Stay</legend>
                     <div class="form_field">
-                        <p>Check-In Date</p>
-                        <input type="date" id="inDate">
+                    <p>Check-In Date</p>
+                   <input type="date" id="inDate" oninput="updateCheckOutMin()" required>
                     </div>
                     <div class="form_field">
                         <p>Check-Out Date</p>
-                        <input type="date" id="outDate">
+                        <input type="date" id="outDate" required  oninput="validateCheckOut()">
                     </div>
                     <div class="form_field">
                         <p>No. Of Adults</p>
-                        <input type="number" placeholder="No. Of Adults" id="noAdults">
+                        <input type="number" placeholder="No. Of Adults" id="noAdults" required>
                     </div>
                     <div class="form_field">
                         <p>No. Of Children</p>
-                        <input type="number" placeholder="No. Of Children" id="noChildren">
+                        <input type="number" placeholder="No. Of Children" id="noChildren" required>
                     </div>
                     <div class="form_field">
                         <p>Meal - Kids Above 5</p>
-                        <input type="number" placeholder="Kids Above 5" id="kidsMeal">
+                        <input type="number" placeholder="Kids Above 5" id="kidsMeal" required>
                     </div>
                     <div class="form_field">
                         <p>No. Of Single Room</p>
@@ -170,7 +170,7 @@
                     </div>
                     <div class="form_field">
                         <p>Diving - Guide</p>
-                        <label for="">Adults</label>
+                       <label for="">Adults</label>
                         <input type="checkbox" id="diveAdults"></input>
                         <label for="">Kids</label>
                         <input type="checkbox" id="diveKids"></input>
@@ -184,66 +184,70 @@
             </form>
         </div>
     </div>
-</body>
-
 </head>
 
-<body>
     <div class="container">
         <div id="totalPrice">
             <h2>Total Price</h2>
             <p id="totalAmount">0.00 LKR</p>
         </div>
     </div>
-</body>
 
-<section class="update-table">
-    <div>Reservation</div>
-    <table class="table-full">
-        <thead id="booklist">
-            <tr>
-                <td>Name</td>
-                <td>Check-In</td>
-                <td>Check-Out</td>
-                <td>Adults</td>
-                <td>Children</td>
-                <td>5+</td>
-                <td>S-Room</td>
-                <td>D-Rooms</td>
-                <td>T-Rooms</td>
-                <td>WI-FI</td>
-                <td>Pool</td>
-                <td>Garden</td>
-                <td>Extra</td>
-                <td>Promo</td>
-                <td>Total</td>
-            </tr>
-        </thead>
-        <tbody id="booktable">
-        </tbody>
-    </table>
-</section>
 
-<section class="update-table">
-    <div>Adventure Booking</div>
-    <table class="table-full">
-        <thead>
-            <tr>
-                <td>Name</td>
-                <td>ADVENTURES</td>
-                <td>L ADULTS</td>
-                <td>L KIDS</td>
-                <td>F ADULTS</td>
-                <td>F KIDS</td>
-                <td>GUIDE- Adults</td>
-                <td>GUIDE- Kids</td>
-                <td>Total </td>
-            </tr>
-        </thead>
-        <tbody id="adventurebooktable">
-        </tbody>
-    </table>
-</section>
+    <section class="update-table">
+        <div>Reservation</div>
+        <div class="wrapper">
+        <table class="table-full">
+            <thead id="booklist">
+                <tr>
+                    <td>Name</td>
+                    <td>Check-In</td>
+                    <td>Check-Out</td>
+                    <td>Adults</td>
+                    <td>Children</td>
+                    <td>5+</td>
+                    <td>S-Room</td>
+                    <td>D-Rooms</td>
+                    <td>T-Rooms</td>
+                    <td>WI-FI</td>
+                    <td>Pool</td>
+                    <td>Garden</td>
+                    <td>Extra</td>
+                    <td>Promo</td>
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody id="booktable">
+            </tbody>
+        </table>
+    </div>
+    </section>
+
+
+
+    <section class="update-table">
+        <div>Adventure Booking</div>
+        <div class="wrapper">
+        <table class="table-full">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>ADVENTURES</td>
+                    <td>L ADULTS</td>
+                    <td>L KIDS</td>
+                    <td>F ADULTS</td>
+                    <td>F KIDS</td>
+                    <td>GUIDE- Adults</td>
+                    <td>GUIDE- Kids</td>
+                    <td>Total </td>
+                </tr>
+            </thead>
+            <tbody id="adventurebooktable">
+            </tbody>
+        </table>
+        </div>
+    </section>
+
 
     <div class="container">
         <div id="totalBookingPrice">
@@ -310,3 +314,4 @@
 
 <!-- </footer> -->
 </html>
+</body>
