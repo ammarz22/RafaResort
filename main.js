@@ -324,6 +324,7 @@ function saveRoomFav(){
 
 function saveAdvFav(){
     const advBooking = {
+        typeofadventure: adventureSelect.value,
         localAdults: localAdultsInput.value || 0,
         localKids: localKidsInput.value || 0,
         foreignAdults: foreignAdultsInput.value || 0,
