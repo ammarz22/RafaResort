@@ -83,9 +83,26 @@ bookBtn.addEventListener("click", () => {
     RoombookingTable.scrollIntoView({behavior : 'smooth', block : 'center'});
 });
 
+function calculateDuration() {
+    const checkInDate = new Date(inDateInput.value);
+    const checkOutDate = new Date(outDateInput.value);
+
+    // time difference in milliseconds
+    const timeDifference = checkOutDate.getTime() - checkInDate.getTime();
+
+    // number of days
+    const durationInDays = timeDifference / (1000 * 3600 * 24);
+
+    // duration of stay
+    console.log(`Duration of stay: ${durationInDays} days`);
+
+    return durationInDays;
+}
 
 // Calculate total cost 
 function calculateTotalCost() {
+    const durationInDays = calculateDuration();
+
     const singleRoomCost = 25000.00;
     const doubleRoomCost = 35000.00;
     const tripleRoomCost = 40000.00;
@@ -118,6 +135,7 @@ function calculateTotalCost() {
         totalCost *= (1 - promoCodeDiscount);
     }
 
+    totalCost *= durationInDays;
         // Update the total cost
     console.log(`Total Room Cost: ${totalCost.toFixed(2)} LKR`);
     totalAmountElement.textContent = `Total Room Cost: ${totalCost.toFixed(2)} LKR`;
@@ -366,22 +384,6 @@ function checkLoyaltyPoints() {
     if (storedLoyaltyPoints) {
         loyaltyField.textContent = `${storedLoyaltyPoints} Points`;
     }
-}
-
-function calculateDuration() {
-    const checkInDate = new Date(inDateInput.value);
-    const checkOutDate = new Date(outDateInput.value);
-
-    // time difference in milliseconds
-    const timeDifference = checkOutDate.getTime() - checkInDate.getTime();
-
-    // number of days
-    const durationInDays = timeDifference / (1000 * 3600 * 24);
-
-    // duration of stay
-    console.log(`Duration of stay: ${durationInDays} days`);
-
-    return durationInDays;
 }
 
 const totalBookAmountElement = document.getElementById("totalBookAmount");
